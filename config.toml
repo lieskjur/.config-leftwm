@@ -33,6 +33,12 @@ key = "t"
 
 [[keybind]]
 command = "ToggleScratchPad"
+value = "Alacritty"
+modifier = ["modkey", "Shift"]
+key = "BackSpace"
+
+[[keybind]]
+command = "ToggleScratchPad"
 value = "Ranger"
 modifier = ["modkey"]
 key = "r"
@@ -69,13 +75,13 @@ key = "XF86XK_AudioMicMute"
 
 [[keybind]]
 command = "Execute"
-value = "brightnessctl -q sset 5%+"
+value = "brightnessctl -q sset 5%+ & polybar-msg hook brightness 1"
 modifier = []
 key = "XF86XK_MonBrightnessUp"
 
 [[keybind]]
 command = "Execute"
-value = "brightnessctl -q sset 5%-"
+value = "brightnessctl -q sset 5%- & polybar-msg hook brightness 1"
 modifier = []
 key = "XF86XK_MonBrightnessDown"
 
