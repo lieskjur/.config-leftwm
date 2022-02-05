@@ -195,13 +195,43 @@ key = "j"
 
 [[keybind]]
 command = "FocusWorkspaceNext"
-modifier = ["modkey"]
+modifier = ["modkey","Shift"]
 key = "l"
 
 [[keybind]]
 command = "FocusWorkspacePrevious"
+modifier = ["modkey","Shift"]
+key = "h"
+
+[[keybind]]
+command = "FocusWorkspaceNext"
+modifier = ["modkey","Shift"]
+key = "Right"
+
+[[keybind]]
+command = "FocusWorkspacePrevious"
+modifier = ["modkey","Shift"]
+key = "Left"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "l"
+
+[[keybind]]
+command = "FocusPreviousTag"
 modifier = ["modkey"]
 key = "h"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "Right"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey"]
+key = "Left"
 
 [[keybind]]
 command = "MoveWindowUp"
@@ -232,16 +262,6 @@ key = "Up"
 command = "PreviousLayout"
 modifier = ["modkey", "Control"]
 key = "Down"
-
-[[keybind]]
-command = "FocusWorkspaceNext"
-modifier = ["modkey"]
-key = "Right"
-
-[[keybind]]
-command = "FocusWorkspacePrevious"
-modifier = ["modkey"]
-key = "Left"
 
 [[keybind]]
 command = "GotoTag"
