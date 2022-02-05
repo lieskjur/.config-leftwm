@@ -114,6 +114,11 @@ modifier = ["modkey", "Shift"]
 key = "r"
 
 [[keybind]]
+command = "HardReload"
+modifier = ["modkey", "Shift"]
+key = "b"
+
+[[keybind]]
 command = "Execute"
 value = "loginctl kill-session $XDG_SESSION_ID"
 modifier = ["modkey", "Shift"]
