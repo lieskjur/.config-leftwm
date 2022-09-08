@@ -86,7 +86,7 @@ key = "XF86XK_MonBrightnessDown"
 
 [[keybind]]
 command = "Execute"
-value = "rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh"
+value = "rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi/rofi-power-menu.sh"
 modifier = []
 key = "XF86XK_PowerOff"
 
