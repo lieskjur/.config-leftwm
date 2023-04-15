@@ -1,16 +1,18 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "S", "D"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 # layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
-layouts = ["MainAndVertStack", "MainAndDeck", "Monocle", "GridHorizontal" ]
+layouts = ["MainAndVertStack", "MainAndDeck", "Monocle" ]
 layout_mode = "Tag"
 disable_current_tag_swap = true
 focus_behaviour = "Sloppy"
 focus_new_windows = true
 
+# Scratchpads
+
 [[scratchpad]]
-name = "Alacritty"
+name = "alacritty"
 value = "alacritty"
 x = 0.25
 y = 0.15
@@ -27,7 +29,7 @@ width =  0.5
 
 [[keybind]]
 command = "ToggleScratchPad"
-value = "Alacritty"
+value = "alacritty"
 modifier = ["modkey"]
 key = "space"
 
@@ -37,40 +39,13 @@ value = "lf"
 modifier = ["modkey"]
 key = "slash"
 
-[[keybind]]
-command = "Execute"
-value = "Alacritty"
-modifier = ["modkey", "Shift"]
-key = "BackSpace"
+# Keyboard backlight
 
 [[keybind]]
 command = "Execute"
 value = "brightnessctl -d tpacpi::kbd_backlight -r"
 modifier = []
 key = "XF86XK_KbdLightOnOff"
-
-[[keybind]]
-command = "Execute"
-value = "pactl set-sink-volume @DEFAULT_SINK@ +10%"
-modifier = []
-key = "XF86XK_AudioRaiseVolume"
-[[keybind]]
-command = "Execute"
-value = "pactl set-sink-volume @DEFAULT_SINK@ -10%"
-modifier = []
-key = "XF86XK_AudioLowerVolume"
-
-[[keybind]]
-command = "Execute"
-value = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-modifier = []
-key = "XF86XK_AudioMute"
-
-[[keybind]]
-command = "Execute"
-value = "amixer -q sset Capture toggle"
-modifier = []
-key = "XF86XK_AudioMicMute"
 
 [[keybind]]
 command = "Execute"
@@ -83,6 +58,36 @@ command = "Execute"
 value = "brightnessctl -q sset 5%- & polybar-msg hook brightness 1"
 modifier = []
 key = "XF86XK_MonBrightnessDown"
+
+# Volume
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-sink-volume @DEFAULT_SINK@ +10%"
+modifier = []
+key = "XF86XK_AudioRaiseVolume"
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-sink-volume @DEFAULT_SINK@ -10%"
+modifier = []
+key = "XF86XK_AudioLowerVolume"
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+modifier = []
+key = "XF86XK_AudioMute"
+
+# Microphone
+
+[[keybind]]
+command = "Execute"
+value = "amixer -q sset Capture toggle"
+modifier = []
+key = "XF86XK_AudioMicMute"
+
+# Rofi
 
 [[keybind]]
 command = "Execute"
@@ -98,19 +103,31 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
+value = "rofi -show drun"
+modifier = ["modkey"]
+key = "r"
+
+# Terminal
+
+[[keybind]]
+command = "Execute"
 value = "alacritty"
-modifier = ["modkey", "Shift"]
+modifier = ["modkey"]
 key = "Return"
+
+# Close Window
 
 [[keybind]]
 command = "CloseWindow"
-modifier = ["modkey", "Shift"]
-key = "q"
+modifier = ["modkey"]
+key = "c"
 
 [[keybind]]
 command = "CloseWindow"
 modifier = ["modkey"]
 key = "q"
+
+# Reload
 
 [[keybind]]
 command = "SoftReload"
@@ -122,27 +139,32 @@ command = "HardReload"
 modifier = ["modkey", "Shift"]
 key = "b"
 
+# Kill Session
+
 [[keybind]]
 command = "Execute"
 value = "loginctl kill-session $XDG_SESSION_ID"
 modifier = ["modkey", "Shift"]
 key = "x"
 
-[[keybind]]
-command = "MoveToLastWorkspace"
-modifier = ["modkey", "Shift"]
-key = "w"
+# SwapTags
+## Swaps the tags in the current workspace
+## with the tags in the previous workspace
 
 [[keybind]]
 command = "SwapTags"
-modifier = ["modkey"]
+modifier = ["modkey", "Shift"]
 key = "w"
+
+# Full screen toggle
 
 [[keybind]]
 command = "ToggleFullScreen"
 modifier = ["modkey"]
 key = "f"
 
+# [Increase/Decrease]MainWidth
+
 [[keybind]]
 command = "DecreaseMainWidth"
 value = "5"
@@ -167,80 +189,22 @@ value = "5"
 modifier = ["modkey", "Control"]
 key = "l"
 
-[[keybind]]
-command = "MoveWindowUp"
-modifier = ["modkey", "Shift"]
-key = "k"
-
-[[keybind]]
-command = "MoveWindowDown"
-modifier = ["modkey", "Shift"]
-key = "j"
+# MoveWindow[Top/Up/Down]
 
 [[keybind]]
 command = "MoveWindowTop"
 modifier = ["modkey"]
-key = "Return"
+key = "e"
 
 [[keybind]]
-command = "FocusWindowUp"
-modifier = ["modkey"]
+command = "MoveWindowUp"
+modifier = ["modkey", "Shift"]
 key = "k"
 
 [[keybind]]
-command = "FocusWindowDown"
-modifier = ["modkey"]
+command = "MoveWindowDown"
+modifier = ["modkey", "Shift"]
 key = "j"
-
-[[keybind]]
-command = "NextLayout"
-modifier = ["modkey", "Control"]
-key = "k"
-
-[[keybind]]
-command = "PreviousLayout"
-modifier = ["modkey", "Control"]
-key = "j"
-
-[[keybind]]
-command = "FocusWorkspaceNext"
-modifier = ["modkey","Shift"]
-key = "l"
-
-[[keybind]]
-command = "FocusWorkspacePrevious"
-modifier = ["modkey","Shift"]
-key = "h"
-
-[[keybind]]
-command = "FocusWorkspaceNext"
-modifier = ["modkey","Shift"]
-key = "Right"
-
-[[keybind]]
-command = "FocusWorkspacePrevious"
-modifier = ["modkey","Shift"]
-key = "Left"
-
-[[keybind]]
-command = "FocusNextTag"
-modifier = ["modkey"]
-key = "l"
-
-[[keybind]]
-command = "FocusPreviousTag"
-modifier = ["modkey"]
-key = "h"
-
-[[keybind]]
-command = "FocusNextTag"
-modifier = ["modkey"]
-key = "Right"
-
-[[keybind]]
-command = "FocusPreviousTag"
-modifier = ["modkey"]
-key = "Left"
 
 [[keybind]]
 command = "MoveWindowUp"
@@ -252,6 +216,18 @@ command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
 key = "Down"
 
+# FocusWindow[Up/Down]
+
+[[keybind]]
+command = "FocusWindowUp"
+modifier = ["modkey"]
+key = "k"
+
+[[keybind]]
+command = "FocusWindowDown"
+modifier = ["modkey"]
+key = "j"
+
 [[keybind]]
 command = "FocusWindowUp"
 modifier = ["modkey"]
@@ -262,17 +238,85 @@ command = "FocusWindowDown"
 modifier = ["modkey"]
 key = "Down"
 
+# [Next/Previous]Layout
+
 [[keybind]]
 command = "NextLayout"
 modifier = ["modkey", "Control"]
-key = "Up"
+key = "j"
 
 [[keybind]]
 command = "PreviousLayout"
 modifier = ["modkey", "Control"]
+key = "k"
+
+[[keybind]]
+command = "NextLayout"
+modifier = ["modkey", "Control"]
 key = "Down"
 
 [[keybind]]
+command = "PreviousLayout"
+modifier = ["modkey", "Control"]
+key = "Up"
+
+# Focus Workspace
+
+[[keybind]]
+command = "FocusWorkspaceNext"
+modifier = ["modkey","Shift"]
+key = "l"
+
+[[keybind]]
+command = "FocusWorkspacePrevious"
+modifier = ["modkey","Shift"]
+key = "h"
+
+[[keybind]]
+command = "FocusWorkspaceNext"
+modifier = ["modkey","Shift"]
+key = "Right"
+
+[[keybind]]
+command = "FocusWorkspacePrevious"
+modifier = ["modkey","Shift"]
+key = "Left"
+
+# Focus Tag
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "l"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey"]
+key = "h"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "Right"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey"]
+key = "Left"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "Page_Down"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey"]
+key = "Page_Up"
+
+# GoToTag
+
+[[keybind]]
 command = "GotoTag"
 value = "1"
 modifier = ["modkey"]
@@ -328,21 +372,11 @@ key = "9"
 
 [[keybind]]
 command = "GotoTag"
-value = "10"
+value = "0"
 modifier = ["modkey"]
-key = "a"
+key = "0"
 
-[[keybind]]
-command = "GotoTag"
-value = "11"
-modifier = ["modkey"]
-key = "s"
-
-[[keybind]]
-command = "GotoTag"
-value = "12"
-modifier = ["modkey"]
-key = "d"
+# MoveToTag
 
 [[keybind]]
 command = "MoveToTag"
@@ -400,18 +434,6 @@ key = "9"
 
 [[keybind]]
 command = "MoveToTag"
-value = "10"
+value = "0"
 modifier = ["modkey", "Shift"]
-key = "a"
-
-[[keybind]]
-command = "MoveToTag"
-value = "11"
-modifier = ["modkey", "Shift"]
-key = "s"
-
-[[keybind]]
-command = "MoveToTag"
-value = "12"
-modifier = ["modkey", "Shift"]
-key = "d"
+key = "0"
