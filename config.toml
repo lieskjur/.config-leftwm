@@ -1,7 +1,7 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 # layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 layouts = ["MainAndVertStack", "MainAndDeck", "Monocle" ]
 layout_mode = "Tag"
@@ -370,12 +370,6 @@ value = "9"
 modifier = ["modkey"]
 key = "9"
 
-[[keybind]]
-command = "GotoTag"
-value = "0"
-modifier = ["modkey"]
-key = "0"
-
 # MoveToTag
 
 [[keybind]]
@@ -431,9 +425,3 @@ command = "MoveToTag"
 value = "9"
 modifier = ["modkey", "Shift"]
 key = "9"
-
-[[keybind]]
-command = "MoveToTag"
-value = "0"
-modifier = ["modkey", "Shift"]
-key = "0"
