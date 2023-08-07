@@ -12,16 +12,8 @@ focus_new_windows = true
 # Scratchpads
 
 [[scratchpad]]
-name = "alacritty"
-value = "alacritty"
-x = 0.25
-y = 0.15
-height = 0.7
-width =  0.5
-
-[[scratchpad]]
-name = "lf"
-value = "alacritty -e lf"
+name = "kitty"
+value = "kitty"
 x = 0.25
 y = 0.15
 height = 0.7
@@ -29,15 +21,9 @@ width =  0.5
 
 [[keybind]]
 command = "ToggleScratchPad"
-value = "alacritty"
+value = "kitty"
 modifier = ["modkey"]
 key = "space"
-
-[[keybind]]
-command = "ToggleScratchPad"
-value = "lf"
-modifier = ["modkey"]
-key = "slash"
 
 # Keyboard backlight
 
